@@ -1,4 +1,32 @@
 <resources>
     <string name="app_name">CheckTask</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_completed">Ver Tareas Completadas</string>
+    <string name="action_delete">Borrar Todas las Tareas</string>
+    <string name="action_deleteC">Borrar Todas las Tareas Completadas</string>
+    <string name="action_deleteI">Borrar Todas las Tareas Incompletas</string>
+    <string name="date_picker">datePicker</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="logo">Logo</string>
+    <string name="lista_de_tareas_completadas">Lista de Tareas Completadas</string>
+    <string name="no_hay_tareas_completadas">No hay tareas completadas</string>
+    <string name="crear_una_tarea">Crear una Tarea</string>
+    <string name="detalle">Detalle:</string>
+    <string name="fecha">Fecha:</string>
+    <string name="ingrese_la_fecha">Ingrese la Fecha</string>
+    <string name="estado">Estado:</string>
+    <string name="incompleta">Incompleta</string>
+    <string name="completada">Completada</string>
+    <string name="guardar">Guardar</string>
+    <string name="actualizar">Actualizar</string>
+    <string name="lista_de_tareas_imcompletas">Lista de Tareas Imcompletas</string>
+    <string name="no_hay_tareas_incompletas">No hay tareas incompletas</string>
+    <string name="tarea_prueba">Tarea prueba</string>
+    <string name="fecha_de_creaci_n">Fecha de creación:</string>
+    <string name="_21_06_2018">21/06/2018</string>
+    <string name="completada_t">Completada!</string>
+    <string name="eliminar">Eliminar:</string>
+    <string name="tarea_prueba_t">Tarea prueba</string>
+    <string name="fecha_de_creaci_n_t">Fecha de creación:</string>
+    <string name="_21_06_2018_t">21/06/2018</string>
+    <string name="eliminar_t">Eliminar:</string>
 </resources>
