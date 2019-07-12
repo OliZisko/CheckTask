@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.data.checktask.TasksDbHelper;
+import com.example.checktask.data.TasksDbHelper;
 
 import java.util.LinkedList;
 
