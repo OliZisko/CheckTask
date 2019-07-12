@@ -23,10 +23,12 @@ import java.util.LinkedList;
 
 public class TaskCompletedListAdapter extends RecyclerView.Adapter<TaskCompletedListAdapter.TaskCompletedViewHolder> {
 
+    /*Definiendo variables globales*/
     private LinkedList<String> mTaskList, mIdList, mDateList, mCompletedList;
     private LayoutInflater mInflater;
     Context ctx;
 
+    /*Constructor del Adaptador de las tareas completadas*/
     public TaskCompletedListAdapter(Context context, LinkedList<String> idList, LinkedList<String> taskList, LinkedList<String> dateList, LinkedList<String> completedList) {
         mInflater = LayoutInflater.from(context);
         ctx = context;
@@ -57,11 +59,13 @@ public class TaskCompletedListAdapter extends RecyclerView.Adapter<TaskCompleted
         taskCompletedViewHolder.hideItemC.setVisibility(View.INVISIBLE);
     }
 
+    /*Sirve para obtener el numero de tareas de la lista de tareas.*/
     @Override
     public int getItemCount() {
         return mTaskList.size();
     }
 
+    /*Esta clase permite hacer uso del Recycler View con la lista de tareas.*/
     class TaskCompletedViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public final TextView detailItemView, dateItemView, checkItemView, hideItemC;
         final TaskCompletedListAdapter taskAdapter;
@@ -76,6 +80,7 @@ public class TaskCompletedListAdapter extends RecyclerView.Adapter<TaskCompleted
             itemView.setOnClickListener(this);
         }
 
+        /*Este metodo dispara el Toas (Mensaje) cuando se Clickea una tarea completada*/
         @Override
         public void onClick(View v) {
             Toast toast = Toast.makeText(ctx, "Esta tarea ya fue completada, Felicidades!", Toast.LENGTH_LONG);

@@ -27,6 +27,7 @@ import java.util.LinkedList;
  */
 
 public class TaskCompleted extends AppCompatActivity {
+    /*Se definen todas las variables a usar en dicha clase*/
     private LinkedList<String> mIdList = new LinkedList<>();
     private LinkedList<String> mTaskList = new LinkedList<>();
     private LinkedList<String> mDateList = new LinkedList<>();
@@ -43,12 +44,14 @@ public class TaskCompleted extends AppCompatActivity {
         setContentView(R.layout.activity_task_completed);
     }
 
+    /*Este callback es llamado cuando la aplicacion pasa a estado onResume*/
     @Override
     public void onResume(){
         super.onResume();
         refresh();
     }
 
+    /*Metodo que sirve para buscar en la base de datos todas las tareas de tipo Completed, es decir, todas las completadas*/
     public Cursor selectAllTasks() throws SQLException {
         TasksDbHelper dbHelper = new TasksDbHelper(ctx);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -57,6 +60,7 @@ public class TaskCompleted extends AppCompatActivity {
         return c;
     }
 
+    /* Este metodo es utilizado para cargar la lista de tareas completadas, y si se elimina uno, sirve para traer los que queden de tipo competado*/
     public void refresh(){
         ctx = this;
         mIdList = new LinkedList<>();
@@ -91,6 +95,7 @@ public class TaskCompleted extends AppCompatActivity {
         mRecyclerViewCompleted.setLayoutManager(new LinearLayoutManager(this));
     }
 
+    /*Este Metodo sirve para eliminar una tarea especifica.*/
     public void deleteC(View view){
         TextView textHide;
         textHide = findViewById(R.id.idHideC);
