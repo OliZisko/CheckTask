@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TaskCreate">
+
+    <ScrollView
+        android:id="@+id/scroll_items"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titleCreate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:padding="25dp"
+                android:fontFamily="sans-serif-black"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textAlignment="center"
+                android:background="@color/colorAccent"
+                android:text="@string/crear_una_tarea" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_below="@id/titleCreate"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/colorPrimaryDark" />
+
+            <TextView
+                android:id="@+id/detailCreateTitle"
+                android:layout_below="@+id/titleCreate"
+                android:layout_marginTop="60dp"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:text="@string/detalle"/>
+
+            <EditText
+                android:id="@+id/detailCreate"
+                android:layout_below="@+id/detailCreateTitle"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:width="300dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:textSize="14sp"
+                android:text=""/>
+
+            <TextView
+                android:id="@+id/dateCreateTitle"
+                android:layout_below="@+id/detailCreate"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:text="@string/fecha"/>
+
+            <Button
+                android:id="@+id/dateCreate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dateCreateTitle"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:width="300dp"
+                android:fontFamily="sans-serif-black"
+                android:textSize="14sp"
+                android:text="@string/ingrese_la_fecha"
+                android:onClick="showDatePickerDialog"/>
+
+            <TextView
+                android:id="@+id/dateView"
+                android:layout_below="@+id/dateCreate"
+                android:layout_marginTop="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:text=""/>
+
+            <TextView
+                android:id="@+id/completedCreateTitle"
+                android:layout_below="@+id/dateView"
+                android:layout_marginTop="30dp"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:text="@string/estado"/>
+
+            <ToggleButton
+                android:id="@+id/completedCreate"
+                android:layout_below="@+id/completedCreateTitle"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:width="150dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:textSize="14sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textOff="@string/incompleta"
+                android:textOn="@string/completada" />
+
+            <Button
+                android:id="@+id/buttonCreate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/completedCreate"
+                android:onClick="saveTask"
+                android:layout_marginTop="30dp"
+                android:layout_centerHorizontal="true"
+                android:width="150dp"
+                android:fontFamily="sans-serif-black"
+                android:textSize="16sp"
+                android:text="@string/guardar"/>
+
+            <Button
+                android:id="@+id/updateCreate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/completedCreate"
+                android:onClick="updateTask"
+                android:layout_marginTop="30dp"
+                android:layout_centerHorizontal="true"
+                android:width="150dp"
+                android:fontFamily="sans-serif-black"
+                android:textSize="16sp"
+                android:text="@string/actualizar"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+</RelativeLayout>
