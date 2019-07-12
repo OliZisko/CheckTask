@@ -31,6 +31,7 @@ public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.TaskVi
     private LayoutInflater mInflater;
     Context ctx;
 
+    /*Constructor del Adaptador de las tareas incompletas*/
     public TaskListAdapter(Context context, LinkedList<String> idList, LinkedList<String> taskList, LinkedList<String> dateList, LinkedList<String> completedList) {
         mInflater = LayoutInflater.from(context);
         ctx = context;
@@ -59,6 +60,8 @@ public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.TaskVi
         taskViewHolder.checkItemView.setVisibility(View.INVISIBLE);
     }
 
+    /*Sirve para obtener el numero de tareas de la lista de tareas incompletas.
+     */
     @Override
     public int getItemCount() {
         return mTaskList.size();
@@ -68,6 +71,8 @@ public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.TaskVi
         public final TextView detailItemView, dateItemView, checkItemView;
         final TaskListAdapter taskAdapter;
 
+        /* Constructor de la clase.
+         */
         public TaskViewHolder(View itemView, TaskListAdapter adapter) {
             super(itemView);
             detailItemView = itemView.findViewById(R.id.detailTask);
@@ -77,20 +82,16 @@ public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.TaskVi
             itemView.setOnClickListener(this);
         }
 
+        /*Este metodo abre el activity para editar la tarea seleccionada.
+        */
         @Override
         public void onClick(View v) {
             // Obtiene la posición del elemento al que se le hizo clic.
             int mPosition = getLayoutPosition();
-            // Usado para tener acceso al elemento afectado en mWordList.
             String id = mIdList.get(mPosition);
             String detail = mTaskList.get(mPosition);
             String date = mDateList.get(mPosition);
             String completed = mCompletedList.get(mPosition);
-            // Cambia la palabra en la mWordList.
-            //mTaskList.set(mPosition, "Clicked! " + element);
-            // Notifica al adapter, que los datos han cambiado de manera que
-            // actualice el RecyclerView para que muestre los datos.
-            //taskAdapter.notifyDataSetChanged();
             Intent intent = new Intent(ctx, TaskCreate.class);
             intent.putExtra("id", id);
             intent.putExtra("detail", detail);

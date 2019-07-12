@@ -54,6 +54,10 @@ public class MainActivity extends AppCompatActivity {
     private TaskListAdapter taskAdapter;
     private Context ctx;
 
+    /* Este metodo callback se activa cuando es iniciada la pantalla
+    * del mainactivity y tiene la funcionalidad del boton FAB para ir
+    * a la pantalla de crear tarea.
+    */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,12 +74,17 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /* Este metodo callback se activa cuando se reanuda la activity
+    * y refresca la lista de tareas.
+     */
     @Override
     public void onResume(){
         super.onResume();
         refresh();
     }
 
+    /* Infla el menu de opciones de los 3 botones de settings.
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -83,6 +92,8 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    /* Este metodo verifica cual opcion se selecciono del menu.
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -123,6 +134,8 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /* Este metodo refresca la lista de tareas incompletas
+     */
     public void refresh(){
         ctx = this;
         mIdList = new LinkedList<>();
@@ -157,24 +170,32 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
+    /* Este metodo borra todas las tareas de la base de datos.
+     */
     public void dropTable(){
         TasksDbHelper dbHelper = new TasksDbHelper(ctx);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         db.execSQL("DELETE FROM TASK");
     }
 
+    /* Este metodo borra las tareas completadas de la base de datos.
+     */
     public void deleteCompletadas(){
         TasksDbHelper dbHelper = new TasksDbHelper(ctx);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         db.execSQL("DELETE FROM TASK WHERE COMPLETED='Completada'");
     }
 
+    /* Este metodo borra las tareas incompletas de la base de datos.
+     */
     public void deleteIncompletas(){
         TasksDbHelper dbHelper = new TasksDbHelper(ctx);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         db.execSQL("DELETE FROM TASK WHERE COMPLETED='Incompleta'");
     }
 
+    /* Este metodo selecciona todas las tareas incompletas de la base de datos.
+     */
     public Cursor selectAllTasks() throws SQLException {
         TasksDbHelper dbHelper = new TasksDbHelper(ctx);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -183,18 +204,19 @@ public class MainActivity extends AppCompatActivity {
         return c;
     }
 
+    /* Verifica que tarea se selecciono de la lista y completa la tarea, esto
+    * para abrir el activity de tareas completadas y mostrarla alli. Se puede
+    * ver un mensaje toast.
+     */
     public void onCheckboxClicked(View view) {
         CheckBox checkBox;
         TextView textHide;
         checkBox = findViewById(R.id.checkTask);
         textHide = findViewById(R.id.idHide);
-        // Is the view now checked?
         boolean checked = checkBox.isChecked();
         String fecha = getDate();
         String completado = "Completada";
         String id = textHide.getText().toString();
-        // Obtiene la posición del elemento al que se le hizo clic.
-        // Usado para tener acceso al elemento afectado en mWordList.
         if(checked){
             TasksDbHelper dbHelper = new TasksDbHelper(ctx);
             SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -206,10 +228,12 @@ public class MainActivity extends AppCompatActivity {
             ctx.startActivity(intent);
         }
         else{
-            //hola
+            //nothing here
         }
     }
 
+    /* Este metodo elimina la tarea seleccionada de la lista.
+     */
     public void deleteI(View view){
         TextView textHide;
         textHide = findViewById(R.id.idHide);
@@ -223,6 +247,8 @@ public class MainActivity extends AppCompatActivity {
         toast.show();
     }
 
+    /* Este metodo obtiene la fecha actual para finalizar una tarea incompleta.
+     */
     private String getDate(){
         DateFormat dfDate = new SimpleDateFormat("dd/MM/yyyy");
         String date=dfDate.format(Calendar.getInstance().getTime());

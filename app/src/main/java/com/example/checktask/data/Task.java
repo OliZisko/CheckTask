@@ -2,6 +2,18 @@ package com.example.checktask.data;
 
 import java.util.Date;
 
+/**
+
+ @author: Alberto Garcia - Francisco De Oliveira - Jose Cafaro
+ CheckTask - App movil para tareas por hacer
+ Proyecto de la materia de Programación Bajo Ambiente Android en la UCAB
+ @version 1.0.0. / 12-07-2019
+
+ */
+
+/* Sirve como objeto para las tareas. Nunca fue usado, usamos listas de String con
+* cada elemento de la base de datos.
+ */
 public class Task {
     private Integer id;
     private String detail;

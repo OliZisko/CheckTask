@@ -44,14 +44,16 @@ public class TaskCompleted extends AppCompatActivity {
         setContentView(R.layout.activity_task_completed);
     }
 
-    /*Este callback es llamado cuando la aplicacion pasa a estado onResume*/
+    /*Este callback es llamado cuando la aplicacion pasa a estado onResume.
+    */
     @Override
     public void onResume(){
         super.onResume();
         refresh();
     }
 
-    /*Metodo que sirve para buscar en la base de datos todas las tareas de tipo Completed, es decir, todas las completadas*/
+    /*Metodo que sirve para buscar en la base de datos todas las tareas de tipo completada.
+    */
     public Cursor selectAllTasks() throws SQLException {
         TasksDbHelper dbHelper = new TasksDbHelper(ctx);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -60,7 +62,9 @@ public class TaskCompleted extends AppCompatActivity {
         return c;
     }
 
-    /* Este metodo es utilizado para cargar la lista de tareas completadas, y si se elimina uno, sirve para traer los que queden de tipo competado*/
+    /* Este metodo es utilizado para cargar la lista de tareas completadas,
+    * y si se elimina uno, sirve para traer los que queden de tipo completada.
+    */
     public void refresh(){
         ctx = this;
         mIdList = new LinkedList<>();
@@ -82,9 +86,6 @@ public class TaskCompleted extends AppCompatActivity {
                 aux.moveToNext();
             }
         }
-        //for (int i = 1; i < 21; i++) {
-        //    mTaskList.addLast("Tarea " + i);
-        //}
         // Obtiene un handle para el RecyclerView.
         mRecyclerViewCompleted = findViewById(R.id.recyclerviewCompleted);
         // Crea un adapter y suministra los datos a ser mostrados.
@@ -95,7 +96,8 @@ public class TaskCompleted extends AppCompatActivity {
         mRecyclerViewCompleted.setLayoutManager(new LinearLayoutManager(this));
     }
 
-    /*Este Metodo sirve para eliminar una tarea especifica.*/
+    /*Este Metodo sirve para eliminar una tarea especifica.
+    */
     public void deleteC(View view){
         TextView textHide;
         textHide = findViewById(R.id.idHideC);

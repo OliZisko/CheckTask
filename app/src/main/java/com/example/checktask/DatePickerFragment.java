@@ -26,12 +26,12 @@ import java.util.Calendar;
 public class DatePickerFragment extends DialogFragment
         implements DatePickerDialog.OnDateSetListener {
 
-    @NonNull
-    @Override
     /**
      * Este metodo callback que se activa cuando es iniciado el calendario
      * y muestra un Dialog del calendario en formato de widget
      */
+    @NonNull
+    @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         /* Se coloca la fecha actual predefinida para que se muestre en el Calendario*/
         final Calendar c = Calendar.getInstance();

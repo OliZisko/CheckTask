@@ -59,17 +59,21 @@ public class TaskCompletedListAdapter extends RecyclerView.Adapter<TaskCompleted
         taskCompletedViewHolder.hideItemC.setVisibility(View.INVISIBLE);
     }
 
-    /*Sirve para obtener el numero de tareas de la lista de tareas.*/
+    /*Sirve para obtener el numero de tareas de la lista de tareas.
+    */
     @Override
     public int getItemCount() {
         return mTaskList.size();
     }
 
-    /*Esta clase permite hacer uso del Recycler View con la lista de tareas.*/
+    /*Esta clase permite hacer uso del Recycler View con la lista de tareas completadas.
+    */
     class TaskCompletedViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public final TextView detailItemView, dateItemView, checkItemView, hideItemC;
         final TaskCompletedListAdapter taskAdapter;
 
+        /* Constructor de la clase.
+        */
         public TaskCompletedViewHolder(View itemView, TaskCompletedListAdapter adapter) {
             super(itemView);
             detailItemView = itemView.findViewById(R.id.detailTask);
@@ -80,7 +84,7 @@ public class TaskCompletedListAdapter extends RecyclerView.Adapter<TaskCompleted
             itemView.setOnClickListener(this);
         }
 
-        /*Este metodo dispara el Toas (Mensaje) cuando se Clickea una tarea completada*/
+        /*Este metodo dispara el Toast (Mensaje) cuando se Clickea una tarea completada*/
         @Override
         public void onClick(View v) {
             Toast toast = Toast.makeText(ctx, "Esta tarea ya fue completada, Felicidades!", Toast.LENGTH_LONG);
