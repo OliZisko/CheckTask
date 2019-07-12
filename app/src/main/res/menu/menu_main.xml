@@ -3,8 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.checktask.MainActivity">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_completed"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:title="@string/action_completed"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_delete"
+        android:orderInCategory="100"
+        android:title="@string/action_delete"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_deleteC"
+        android:orderInCategory="100"
+        android:title="@string/action_deleteC"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_deleteI"
+        android:orderInCategory="100"
+        android:title="@string/action_deleteI"
         app:showAsAction="never" />
 </menu>
