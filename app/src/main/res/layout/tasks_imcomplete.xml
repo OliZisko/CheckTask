@@ -11,7 +11,7 @@
         android:textStyle="bold"
         android:textSize="14sp"
         android:padding="12dp"
-        android:text="Tarea prueba"/>
+        android:text="@string/tarea_prueba_t"/>
     <TextView
         android:id="@+id/dateTaski"
         android:layout_below="@+id/detailTask"
@@ -21,7 +21,7 @@
         android:textStyle="bold"
         android:textSize="14sp"
         android:paddingLeft="12dp"
-        android:text="Fecha de creación: "/>
+        android:text="@string/fecha_de_creaci_n_t"/>
     <TextView
         android:id="@+id/dateTaskf"
         android:layout_marginLeft="10dp"
@@ -33,19 +33,49 @@
         android:textStyle="italic"
         android:textSize="12sp"
         android:layout_marginTop="2dp"
-        android:text="21/06/2018"/>
+        android:text="@string/_21_06_2018_t"/>
+
+    <TextView
+        android:id="@+id/idHide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
     <CheckBox
         android:id="@+id/checkTask"
         android:layout_toRightOf="@+id/dateTaskf"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="80dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:onClick="onCheckboxClicked"/>
+
+    <TextView
+        android:id="@+id/eliminarTextI"
+        android:layout_below="@+id/dateTaski"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:layout_marginTop="15dp"
+        android:paddingLeft="12dp"
+        android:text="@string/eliminar_t"/>
+
+    <ImageView
+        android:id="@+id/image_deleteI"
+        android:layout_toRightOf="@id/eliminarTextI"
+        android:layout_below="@id/dateTaskf"
+        android:src="@drawable/botondelete"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="12dp"
+        android:layout_height="25dp"
+        android:layout_width="25dp"
+        android:onClick="deleteI" />
 
     <View
         android:id="@+id/divider"
         android:layout_marginTop="8dp"
-        android:layout_below="@id/dateTaskf"
+        android:layout_below="@id/eliminarTextI"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/colorPrimary" />

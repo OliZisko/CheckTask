@@ -10,14 +10,32 @@
 
     <TextView
         android:id="@+id/titleTasks"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:padding="25dp"
         android:fontFamily="sans-serif-black"
         android:textStyle="bold"
         android:textSize="16sp"
-        android:text="Lista de Tareas Imcompletas" />
+        android:textColor="@color/colorPrimaryDark"
+        android:textAlignment="center"
+        android:background="@color/colorAccent"
+        android:text="@string/lista_de_tareas_imcompletas" />
+
+    <TextView
+        android:id="@+id/hideTextI"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:padding="25dp"
+        android:layout_below="@id/titleTasks"
+        android:fontFamily="sans-serif-black"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textColor="@color/colorPrimary"
+        android:textAlignment="center"
+        android:text="@string/no_hay_tareas_incompletas" />
+
 
     <View
         android:id="@+id/divider"
