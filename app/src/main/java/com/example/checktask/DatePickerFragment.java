@@ -28,20 +28,28 @@ public class DatePickerFragment extends DialogFragment
 
     @NonNull
     @Override
+    /**
+     * Este metodo callback que se activa cuando es iniciado el calendario
+     * y muestra un Dialog del calendario en formato de widget
+     */
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        // Use the current date as the default date in the picker.
+        /* Se coloca la fecha actual predefinida para que se muestre en el Calendario*/
         final Calendar c = Calendar.getInstance();
         int year = c.get(Calendar.YEAR);
         int month = c.get(Calendar.MONTH);
         int day = c.get(Calendar.DAY_OF_MONTH);
-        // Create a new instance of DatePickerDialog and return it.
+        /*Crea la instancia del widget del Calendario para que se le despliegue al usuario*/
         return new DatePickerDialog(getActivity(), this, year, month, day);
     }
 
+    /**
+     * Este metodo obtiene la fecha seleccionada por el usuario y es enviada al activity
+     * TaskCreate que fue el que llamo al Dialog del Calendario
+     */
     public void onDateSet(DatePicker view, int year, int month, int day) {
-        // Set the activity to the Main Activity.
+        /*Setea la actividad que se va a enviar como TaskCreate*/
         TaskCreate activity = (TaskCreate) getActivity();
-        // Invoke Main Activity's processDatePickerResult() method.
+        /*Retorna la data al TaskCreate*/
         activity.processDatePickerResult(year, month, day);
     }
 }

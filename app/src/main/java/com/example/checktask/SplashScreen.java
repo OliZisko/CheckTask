@@ -17,7 +17,7 @@ import android.os.Bundle;
 public class SplashScreen extends AppCompatActivity {
 
     /**
-     * Este metodo callback que se ejecuta al iniciar el Activity. Luego espera 3 seg cargando
+     * Este metodo callback que se ejecuta al iniciar el Activity. Luego espera 4 seg cargando
      * la barra de carga y mostrando el logo de la aplicación. Luego llama al MainActivity.
      */
     @Override
@@ -25,6 +25,7 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
+        /*Funcion que retrasa el inicio de la nueva actividad por de 4 segundos*/
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
